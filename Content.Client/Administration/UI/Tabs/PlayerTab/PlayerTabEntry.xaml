@@ -34,6 +34,11 @@
                SizeFlagsStretchRatio="2"
                HorizontalExpand="True"
                ClipText="True"/>
+        <customControls:VSeparator/>
+        <Label Name="WatchlistLabel"
+               SizeFlagsStretchRatio="2"
+               HorizontalExpand="True"
+               ClipText="True"/>
         <!-- End Frontier: add balance -->
     </BoxContainer>
 </PanelContainer>

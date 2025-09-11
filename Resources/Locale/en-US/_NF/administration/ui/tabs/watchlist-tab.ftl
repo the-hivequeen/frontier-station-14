@@ -1,0 +1,1 @@
+player-tab-watchlist = Watchlist

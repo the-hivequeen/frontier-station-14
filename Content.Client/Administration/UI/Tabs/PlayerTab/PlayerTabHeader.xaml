@@ -38,6 +38,7 @@
                ClipText="True"
                Text="{Loc player-tab-playtime}"
                MouseFilter="Pass"/>
+        <!-- Frontier: add balance -->
         <cc:VSeparator/>
         <Label Name="BalanceLabel"
                SizeFlagsStretchRatio="2"
@@ -45,5 +46,13 @@
                ClipText="True"
                Text="{Loc player-tab-balance}"
                MouseFilter="Pass"/>
+        <cc:VSeparator/>
+        <Label Name="WatchlistLabel"
+               SizeFlagsStretchRatio="2"
+               HorizontalExpand="True"
+               ClipText="True"
+               Text="{Loc player-tab-watchlist}"
+               MouseFilter="Pass"/>
+        <!-- End Frontier: add balance -->
     </BoxContainer>
 </Control>

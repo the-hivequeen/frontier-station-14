@@ -239,6 +239,7 @@ public sealed partial class PlayerTab : Control
             Header.RoleType => y.SortWeight - x.SortWeight,
             Header.Playtime => TimeSpan.Compare(x.OverallPlaytime ?? default, y.OverallPlaytime ?? default),
             Header.Balance => x.Balance.CompareTo(y.Balance), // Frontier
+            //Header.Watchlist => x.Balance.CompareTo(y.Balance), // Frontier
             _ => 1
         };
     }

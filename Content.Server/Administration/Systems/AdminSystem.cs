@@ -95,6 +95,7 @@ public sealed class AdminSystem : EntitySystem
         SubscribeLocalEvent<ActorComponent, EntityRenamedEvent>(OnPlayerRenamed);
         SubscribeLocalEvent<ActorComponent, IdentityChangedEvent>(OnIdentityChanged);
         SubscribeLocalEvent<BalanceChangedEvent>(OnBalanceChanged); // Frontier
+        //SubscribeLocalEvent<BalanceChangedEvent>(OnBalanceChanged); // Frontier
     }
 
     private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev)
@@ -201,6 +202,13 @@ public sealed class AdminSystem : EntitySystem
         UpdatePlayerList(ev.Session);
     }
     // End Frontier
+    
+    // Frontier: add balance
+    private void OnWatchlistChanged(BalanceChangedEvent ev)
+    {
+        UpdatePlayerList(ev.Session);
+    }
+    // End Frontier
 
     public override void Shutdown()
     {
@@ -242,6 +250,8 @@ public sealed class AdminSystem : EntitySystem
             // Frontier
             if (!_bank.TryGetBalance(session.AttachedEntity.Value, out balance))
                 balance = int.MinValue; // Reset value to "no balance" flag value.
+            
+            
             // Frontier
         }
 
@@ -295,7 +305,8 @@ public sealed class AdminSystem : EntitySystem
             connected,
             _roundActivePlayers.Contains(data.UserId),
             overallPlaytime,
-            balance); // Frontier
+            balance, // Frontier
+            true); // Frontier
     }
 
     private void OnPanicBunkerChanged(bool enabled)

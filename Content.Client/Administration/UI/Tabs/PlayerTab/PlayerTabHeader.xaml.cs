@@ -21,6 +21,7 @@ public sealed partial class PlayerTabHeader : Control
         RoleTypeLabel.OnKeyBindDown += RoleTypeClicked;
         PlaytimeLabel.OnKeyBindDown += PlaytimeClicked;
         BalanceLabel.OnKeyBindDown += BalanceClicked; // Frontier
+        WatchlistLabel.OnKeyBindDown += WatchlistClicked; // Frontier
     }
 
     public Label GetHeader(Header header)
@@ -33,6 +34,7 @@ public sealed partial class PlayerTabHeader : Control
             Header.RoleType => RoleTypeLabel,
             Header.Playtime => PlaytimeLabel,
             Header.Balance => BalanceLabel, // Frontier
+            Header.Watchlist => WatchlistLabel, // Frontier
             _ => throw new ArgumentOutOfRangeException(nameof(header), header, null)
         };
     }
@@ -45,6 +47,7 @@ public sealed partial class PlayerTabHeader : Control
         RoleTypeLabel.Text = Loc.GetString("player-tab-roletype");
         PlaytimeLabel.Text = Loc.GetString("player-tab-playtime");
         BalanceLabel.Text = Loc.GetString("player-tab-balance"); // Frontier
+        WatchlistLabel.Text = Loc.GetString("player-tab-watchlist"); // Frontier
     }
 
     private void HeaderClicked(GUIBoundKeyEventArgs args, Header header)
@@ -87,6 +90,11 @@ public sealed partial class PlayerTabHeader : Control
     {
         HeaderClicked(args, Header.Balance);
     }
+    
+    private void WatchlistClicked(GUIBoundKeyEventArgs args) // Frontier
+    {
+        HeaderClicked(args, Header.Watchlist);
+    }
 
     protected override void Dispose(bool disposing)
     {
@@ -100,6 +108,7 @@ public sealed partial class PlayerTabHeader : Control
             RoleTypeLabel.OnKeyBindDown -= RoleTypeClicked;
             PlaytimeLabel.OnKeyBindDown -= PlaytimeClicked;
             BalanceLabel.OnKeyBindDown -= BalanceClicked; // Frontier
+            WatchlistLabel.OnKeyBindDown -= WatchlistClicked; // Frontier
         }
     }
 
@@ -110,6 +119,7 @@ public sealed partial class PlayerTabHeader : Control
         Job,
         RoleType,
         Playtime,
-        Balance // Frontier
+        Balance, // Frontier
+        Watchlist //Frontier
     }
 }
