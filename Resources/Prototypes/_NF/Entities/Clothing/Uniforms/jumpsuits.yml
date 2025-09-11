@@ -152,6 +152,17 @@
     sprite: _NF/Clothing/Uniforms/Jumpsuit/public_affairs.rsi
   - type: Clothing
     sprite: _NF/Clothing/Uniforms/Jumpsuit/public_affairs.rsi
+    
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitPajamaFSB
+  name: fsb pajamas
+  description: Dusty do this part.
+  components:
+    - type: Sprite
+      sprite: _NF/Clothing/Uniforms/Jumpsuit/pajama_fsb.rsi
+    - type: Clothing
+      sprite: _NF/Clothing/Uniforms/Jumpsuit/pajama_fsb.rsi
 
 # Syndicate Jupsuits with sensors off
 - type: entity

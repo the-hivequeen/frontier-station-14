@@ -1,0 +1,18 @@
+# Mugs
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugFSB
+  name: fsb mug
+  description: This is an FSB MUG
+  components:
+    - type: Sprite
+      sprite: _NF/Objects/Consumable/Drinks/mug_fsb.rsi
+      
+- type: entity
+  parent: DrinkBaseMug
+  id: DrinkMugFSC
+  name: fsc mug
+  description: This is an FSC MUG
+  components:
+    - type: Sprite
+      sprite: _NF/Objects/Consumable/Drinks/mug_fsc.rsi
