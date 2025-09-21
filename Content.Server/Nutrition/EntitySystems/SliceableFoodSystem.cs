@@ -76,7 +76,7 @@ public sealed class SliceableFoodSystem : EntitySystem
         TransformComponent? transform = null)
     {
         if (!Resolve(uid, ref component, ref food, ref transform) ||
-            string.IsNullOrEmpty(component.Slice))
+            (string.IsNullOrEmpty(component.Slice) && !(component.PossibleSlices.Count > 0))) // Frontier
             return false;
 
         if (!_solutionContainer.TryGetSolution(uid, food.Solution, out var soln, out var solution))
@@ -117,7 +117,17 @@ public sealed class SliceableFoodSystem : EntitySystem
         if (!Resolve(uid, ref comp, ref transform))
             return EntityUid.Invalid;
 
-        var sliceUid = Spawn(comp.Slice, _transform.GetMapCoordinates(uid));
+        // Frontier: Use upstream Slice if it exists, otherwise spawn random slices from PossibleSlices
+        EntityUid sliceUid;
+        if (string.IsNullOrEmpty(comp.Slice))
+        {
+            sliceUid = Spawn(comp.PossibleSlices[_random.Next(comp.PossibleSlices.Count)], _transform.GetMapCoordinates(uid));
+        }
+        else
+        {
+            sliceUid = Spawn(comp.Slice, _transform.GetMapCoordinates(uid));
+        }
+        // End Frontier
 
         // try putting the slice into the container if the food being sliced is in a container!
         // this lets you do things like slice a pizza up inside of a hot food cart without making a food-everywhere mess

@@ -13,6 +13,11 @@ public sealed partial class SliceableFoodComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId? Slice;
+    
+    // Frontier: List of possible slices to randomize
+    [DataField]
+    public List<EntProtoId> PossibleSlices = [];
+    // End Frontier
 
     [DataField]
     public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Items/Culinary/chop.ogg");
