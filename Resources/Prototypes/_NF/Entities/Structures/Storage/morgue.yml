@@ -1,0 +1,11 @@
+- type: entity
+  id: NFMorgueShip
+  parent: Morgue
+  name: morgue
+  suffix: Ship
+  components:
+  - type: Construction
+    graph: NFMorgueShip
+    node: morgue
+    containers:
+      - entity_storage

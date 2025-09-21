@@ -65,3 +65,15 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
+
+- type: construction
+  id: NFMorgueShipConstruction
+  graph: NFMorgueShip
+  startNode: start
+  targetNode: morgue
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

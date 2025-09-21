@@ -1,0 +1,29 @@
+- type: constructionGraph
+  id: NFMorgueShip
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: morgue
+          completed:
+            - !type:SnapToGrid
+          steps:
+            - material: Steel
+              amount: 30 # Currently not possible to use, should be roughly as expensive as building a freezer
+              doAfter: 5
+            - material: Steel
+              amount: 30 # Currently not possible to use, should be roughly as expensive as building a freezer
+              doAfter: 5
+    - node: morgue
+      entity: NFMorgueShip
+      edges:
+        - to: start
+          steps:
+            - tool: Screwing
+              doAfter: 5
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 5
+            - !type:EmptyAllContainers
+            - !type:DeleteEntity
