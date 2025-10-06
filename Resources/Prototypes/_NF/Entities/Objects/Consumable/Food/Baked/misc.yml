@@ -124,3 +124,51 @@
           Quantity: 4
         - ReagentId: Flavorol
           Quantity: 2
+
+- type: entity
+  name: quantum mothmallow tray
+  parent: FoodMothMothmallow
+  id: FoodMothMothmallowQuantum
+  description: A light and fluffy vegan marshmallow flavoured with vanilla and rum. These are known to the moths as cloud squares.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - vanilla
+        - sweet
+        - sublime
+    - type: SliceableFood
+      count: 5
+      slice: FoodMothMothmallowSlice
+    - type: Sprite
+      sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
+      state: mothmallow
+      
+- type: entity
+  name: mothmallow slice
+  parent: FoodMothMothmallowSlice
+  id: FoodMothMothmallowSliceQuantum
+  description: Fluffy little clouds of joy- in a strangely moth-like form and colour.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - vanilla
+        - sweet
+        - sublime
+    - type: Sprite
+      sprite: Nyanotrasen/Objects/Consumable/Food/moth.rsi
+      state: mothmallow-slice
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 7
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 4
+            - ReagentId: Sugar
+              Quantity: 2
+    - type: MothFood # Frontier
+  # Frontier: edible without special requirements
+  # - type: Food
+  #   requiresSpecialDigestion: true
+  # End Frontier
+#Tastes like vanilla and clouds.

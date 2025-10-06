@@ -25,6 +25,21 @@
   - Oven # Frontier
 
 - type: microwaveMealRecipe
+  id: RecipeMothMothmallowQuantum
+  name: quantum mothmallow recipe
+  result: FoodMothMothmallowQuantum
+  time: 10
+  reagents:
+    Sugar: 10
+    Rum: 5
+    MilkSoy: 5
+    Artifexium: 5
+  solids:
+    FoodSoybeans: 1
+  recipeType:
+    - Oven
+
+- type: microwaveMealRecipe
   id: RecipeMothMoffin
   name: moffin recipe
   result: FoodMothMoffin
