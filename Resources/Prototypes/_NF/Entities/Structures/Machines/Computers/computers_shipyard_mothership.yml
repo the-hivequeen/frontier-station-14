@@ -44,7 +44,6 @@
   - type: ShipyardListing
     shuttles:
     - Fighter
-    - Cleric
     - Rogue
 
 # The mccargo console
